@@ -1,0 +1,56 @@
+* PROVISIONAL corrected transcription of user-supplied schematic image, 2026-10-20.
+* See schematics/image-v2/TRANSCRIPTION.md for assumptions. Not KiCad source.
+.param DRIVE_R=50k TONE_R=50k VOLUME=0.5
+Rpower supply vcc 100
+Cpower vcc 0 220u
+Dprotect 0 vcc SCHOTTKY_APPROX
+
+* First common-emitter stage: collector-to-base feedback.
+Cin in b1 50n
+Rb1 b1 0 100k
+Rfeedback c1 b1 470k
+Cfeedback c1 b1 200p
+Rc1 vcc c1 20k
+Re1 e1 0 100
+Q1 c1 b1 e1 S8050_APPROX
+Ccouple1 c1 drive 100n
+
+* 100k drive rheostat and 5k shunt remain tentative image interpretations.
+Rdrive drive clip {DRIVE_R}
+Rshunt drive 0 5k
+* Same antiparallel pair in both modes. Switch wiring differs below.
+Dclip1 clip diode_return SCHOTTKY_APPROX
+Dclip2 diode_return clip SCHOTTKY_APPROX
+* Shunt clipper: diode return to ground; signal bypasses pair.
+Rswitch_return diode_return 0 1m
+Rswitch_signal drive selected 1m
+
+* Second common-emitter stage and passive tone network.
+Ccouple2 selected b2 100n
+Rbias2hi vcc b2 220k
+Rbias2lo b2 0 100k
+Rc2 vcc c2 6.8k
+Re2 e2 0 3.3k
+Q2 c2 b2 e2 S8050_APPROX
+Ctone c2 tone_pre 220n
+Rtone tone_pre tone_series {TONE_R}
+Rtonefixed tone_series b3 1.5k
+Ctreble b3 0 2.2n
+
+* Third common-emitter stage and 100k output volume potentiometer.
+Rbias3hi vcc b3 250k
+Rbias3lo b3 0 100k
+Rc3 vcc c3 10k
+Re3 e3 0 3.3k
+Q3 c3 b3 e3 S8050_APPROX
+Cout c3 volume_top 1u
+Rvolumehi volume_top out {100k*(1-VOLUME)+1m}
+Rvolumelo out 0 {100k*VOLUME+1m}
+
+* S8050 is the assigned hardware part for Q1-Q3. Parameters below remain
+* a generic NPN proxy, NOT manufacturer S8050 data. Do not infer part accuracy.
+.model S8050_APPROX NPN (IS=1e-14 BF=150 VAF=100 IKF=0.1
++ CJE=20p CJC=8p TF=0.5n TR=50n)
+* Illustrative Schottky approximation, not a specified production part.
+* TT omitted (zero default); capacitance/leakage/forward drop are unvalidated.
+.model SCHOTTKY_APPROX D (IS=200n N=1.05 RS=2 CJO=10p BV=30 IBV=10u)

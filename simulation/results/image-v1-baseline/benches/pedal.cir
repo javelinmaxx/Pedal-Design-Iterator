@@ -1,0 +1,50 @@
+* PROVISIONAL transcription of user-supplied schematic image, 2026-10-20.
+* See schematics/image-v1/TRANSCRIPTION.md for assumptions. Not KiCad source.
+.param DRIVE_R=50k TONE_R=50k VOLUME=0.5
+Rpower supply vcc 100
+Cpower vcc 0 220u
+Dprotect 0 vcc DGEN
+
+* First common-emitter stage: collector-to-base feedback.
+Cin in b1 50n
+Rb1 b1 0 100k
+Rfeedback c1 b1 470k
+Cfeedback c1 b1 200p
+Rc1 vcc c1 20k
+Re1 e1 0 100
+Q1 c1 b1 e1 NPNGEN
+Ccouple1 c1 drive 100n
+
+* Tentative drive/clipping network; DPDT assumed in clipping position.
+* 100k control approximated as rheostat; 5k assumed shunt to ground.
+Rdrive drive clip {DRIVE_R}
+Rshunt drive 0 5k
+Dclip1 clip 0 DGEN
+Dclip2 0 clip DGEN
+
+* Second common-emitter stage and passive tone network.
+Ccouple2 drive b2 100n
+Rbias2hi vcc b2 220k
+Rbias2lo b2 0 100k
+Rc2 vcc c2 6.8k
+Re2 e2 0 3.3k
+Q2 c2 b2 e2 NPNGEN
+Ctone c2 tone_pre 220n
+Rtone tone_pre tone_series {TONE_R}
+Rtonefixed tone_series b3 1.5k
+Ctreble b3 0 2.2n
+
+* Third common-emitter stage and 100k output volume potentiometer.
+Rbias3hi vcc b3 250k
+Rbias3lo b3 0 100k
+Rc3 vcc c3 10k
+Re3 e3 0 3.3k
+Q3 c3 b3 e3 NPNGEN
+Cout c3 volume_top 1u
+Rvolumehi volume_top out {100k*(1-VOLUME)+1m}
+Rvolumelo out 0 {100k*VOLUME+1m}
+
+* Illustrative generic silicon devices, NOT verified S8050/diode models.
+.model NPNGEN NPN (IS=1e-14 BF=150 VAF=100 IKF=0.1
++ CJE=20p CJC=8p TF=0.5n TR=50n)
+.model DGEN D (IS=2.52n N=1.75 RS=0.568 CJO=4p TT=20n BV=100 IBV=100u)

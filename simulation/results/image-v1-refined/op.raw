@@ -1,0 +1,52 @@
+Title: image transcription - operating point
+Date: Tue Oct 20 05:29:45  2026
+Command: ngspice-44.2, Build Sun Jan 12 08:19:15 UTC 2025
+Plotname: Operating Point
+Flags: real
+No. Variables: 21
+No. Points: 1
+Variables:
+	0	v(supply)	voltage
+	1	v(b1)	voltage
+	2	v(b2)	voltage
+	3	v(b3)	voltage
+	4	v(c1)	voltage
+	5	v(c2)	voltage
+	6	v(c3)	voltage
+	7	v(clip)	voltage
+	8	v(drive)	voltage
+	9	v(e1)	voltage
+	10	v(e2)	voltage
+	11	v(e3)	voltage
+	12	v(in)	voltage
+	13	v(out)	voltage
+	14	v(source)	voltage
+	15	v(tone_pre)	voltage
+	16	v(tone_series)	voltage
+	17	v(vcc)	voltage
+	18	i(vguitar)	current
+	19	v(volume_top)	voltage
+	20	i(vsupply)	current
+Values:
+ 0	9.000000000000000e+00
+	6.373190668771793e-01
+	2.516374758149790e+00
+	2.297394041117516e+00
+	4.300446885470310e+00
+	5.023524602080927e+00
+	3.866375785910753e+00
+	-1.650092512609267e-29
+	-1.500084102372061e-30
+	2.218634691085282e-02
+	1.876524545230128e+00
+	1.660486206513839e+00
+	0.000000000000000e+00
+	0.000000000000000e+00
+	0.000000000000000e+00
+	2.297394041117515e+00
+	2.297394041117516e+00
+	8.865180167025255e+00
+	0.000000000000000e+00
+	0.000000000000000e+00
+	-1.348198329747446e-03
+

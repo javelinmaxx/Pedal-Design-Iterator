@@ -1,0 +1,8 @@
+Image transcription - 100mV RMS generator, 1kHz sine
+Vsupply supply 0 9
+Vguitar source 0 DC 0 SIN(0 0.1414213562373095 1k)
+Rsource source in 20k
+Rload out 0 20k
+.include pedal.cir
+.tran 0.5u 300m 280m 0.5u
+.end

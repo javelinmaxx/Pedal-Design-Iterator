@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/Pedal-Design-Iterator/simulation/run_shared.py", line 146, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/workspace/Pedal-Design-Iterator/simulation/run_shared.py", line 113, in main
+    run_one(benches / (args.one + ".cir"), output)
+  File "/workspace/Pedal-Design-Iterator/simulation/run_shared.py", line 72, in run_one
+    command('source "' + str(deck) + '"')
+  File "/workspace/Pedal-Design-Iterator/simulation/run_shared.py", line 57, in command
+    raise RuntimeError("ngspice command failed: " + value)
+RuntimeError: ngspice command failed: source "/workspace/Pedal-Design-Iterator/simulation/results/image-v1-baseline/benches/ac.cir"

@@ -1,0 +1,49 @@
+stderr Warning: can't find the initialization file spinit.
+stdout ******
+stdout ** ngspice-44.2 shared library
+stdout ** Creation Date: Sun Jan 12 08:19:15 UTC 2025
+stdout ******
+stdout ******
+stdout ** ngspice-44.2 : Circuit level simulation program
+stdout ** Compiled with KLU Direct Linear Solver
+stdout ** The U. C. Berkeley CAD Group
+stdout ** Copyright 1985-1994, Regents of the University of California.
+stdout ** Copyright 2001-2024, The ngspice team.
+stdout ** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+stdout ** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+stdout ** Creation Date: Sun Jan 12 08:19:15 UTC 2025
+stdout ******
+stdout Note: No compatibility mode selected!
+stdout Circuit: image v2 crossover - 100mv rms generator, 1khz sine
+stdout Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+stdout Using SPARSE 1.3 as Direct Linear Solver
+stdout Initial Transient Solution
+stdout --------------------------
+stdout Node                                   Voltage
+stdout ----                                   -------
+stdout supply                                       9
+stdout source                                       0
+stdout in                                           0
+stdout out                                          0
+stdout vcc                                    8.86516
+stdout b1                                    0.637319
+stdout c1                                     4.30044
+stdout e1                                   0.0221863
+stdout drive                             -1.77894e-28
+stdout clip                              -1.95683e-27
+stdout diode_return                       6.39629e-19
+stdout selected                           6.39629e-19
+stdout b2                                     2.51637
+stdout c2                                     5.02352
+stdout e2                                     1.87652
+stdout tone_pre                               2.29739
+stdout tone_series                            2.29739
+stdout b3                                     2.29739
+stdout c3                                     3.86637
+stdout e3                                     1.66048
+stdout volume_top                                   0
+stdout vguitar#branch                               0
+stdout vsupply#branch                     -0.00134839
+ Reference value :  2.80000e-01
+stdout No. of Data Rows : 20001
+stdout ASCII raw file "/workspace/Pedal-Design-Iterator/simulation/results/image-v2-crossover/transient.raw"

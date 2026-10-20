@@ -1,0 +1,49 @@
+{
+  "supply": {
+    "voltage_V": 9,
+    "available_current_A": 0.1,
+    "note": "100 mA is the stated supply capacity/current budget. Measure circuit current; do not force 100 mA through the circuit. Supply impedance and current-limit behavior are unspecified."
+  },
+  "input": {
+    "level_V_rms": 0.1,
+    "source_impedance_ohm": 20000,
+    "pedal_input_impedance_target_ohm": null,
+    "harmonic_test_waveform": "sine",
+    "harmonic_test_frequency_Hz": 1000,
+    "frequency_status": "proposed default, not a user-specified target",
+    "dc_offset_V": null
+  },
+  "load": {
+    "resistance_ohm": 20000
+  },
+  "controls": null,
+  "devices": {
+    "Q1": "S8050",
+    "Q2": "S8050",
+    "Q3": "S8050",
+    "diodes": "Schottky; exact part unspecified",
+    "model_status": "image-v2 uses a generic NPN proxy for S8050 and illustrative Schottky parameters, not manufacturer-validated models"
+  },
+  "switch_modes": {
+    "shunt": "Antiparallel Schottky pair returns to ground; signal feeds stage 2 directly.",
+    "crossover": "Same antiparallel pair inserted in series with the signal feeding stage 2."
+  },
+  "targets": {
+    "gain": {
+      "limit_dB": 10,
+      "comparison": "strictly_greater_than",
+      "measurement_frequency_Hz": null,
+      "measurement_reference": null,
+      "measurement_regime": null,
+      "note": "Define frequency, source versus pedal-input reference, small signal versus large signal gain, and control settings when the schematic is available."
+    },
+    "THD_limit_percent": null,
+    "THD_status": "Report measured harmonic content without a pass/fail limit.",
+    "remaining_specifications": "To be supplied when the schematic is made."
+  },
+  "analysis_requirements": {
+    "harmonics": "Report H2-H10 relative to fundamental in dBc, fundamental RMS, output DC, and THD through H10; retain waveforms for further analysis.",
+    "distortion": "Compare clipping and harmonic spectrum at fixed controls and input level; additional level sweep points remain to be specified.",
+    "compressor": "Measure steady state input/output curve, gain reduction, attack and release using separate level/envelope tests once their settings are defined."
+  }
+}

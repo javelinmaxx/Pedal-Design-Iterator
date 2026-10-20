@@ -1,0 +1,19 @@
+stderr Warning: can't find the initialization file spinit.
+stdout ******
+stdout ** ngspice-44.2 shared library
+stdout ** Creation Date: Sun Jan 12 08:19:15 UTC 2025
+stdout ******
+stdout ******
+stdout ** ngspice-44.2 : Circuit level simulation program
+stdout ** Compiled with KLU Direct Linear Solver
+stdout ** The U. C. Berkeley CAD Group
+stdout ** Copyright 1985-1994, Regents of the University of California.
+stdout ** Copyright 2001-2024, The ngspice team.
+stdout ** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+stdout ** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+stdout ** Creation Date: Sun Jan 12 08:19:15 UTC 2025
+stdout ******
+stderr Command 'source' failed:
+stderr "/workspace/Pedal-Design-Iterator/simulation/results/image-v1-baseline/benches/transient.cir": No such file or directory
+stderr Simulation interrupted due to error!
+stderr Error: ngspice.dll cannot recover and awaits to be reset or detached

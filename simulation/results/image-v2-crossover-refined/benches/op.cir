@@ -1,0 +1,8 @@
+Image v2 crossover - operating point
+Vsupply supply 0 9
+Vguitar source 0 DC 0
+Rsource source in 20k
+Rload out 0 20k
+.include pedal.cir
+.op
+.end

@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-10-20T05:35:20.213890+00:00",
+  "backend": "libngspice, isolated subprocess per analysis",
+  "bench_files_sha256": {
+    "ac.cir": "9606d4dee5d2315c511b3427a6c117c21fd399710d1b53b3944ee05d0e8c0bd7",
+    "op.cir": "496c230b3891fd6fc479ef299e2492e7ff6d510d21b1bebceed302e4dbdb8e0c",
+    "pedal.cir": "d5d1b7f28c4d866a3ade446744cc8d636c2f306265590efd385db5db0e6c0d83",
+    "transient.cir": "135de12f473725835edbfa445bc8163ab036b2af5419efe41eafeb182e72c81b"
+  },
+  "runs": [
+    {
+      "analysis": "op",
+      "returncode": 0
+    },
+    {
+      "analysis": "ac",
+      "returncode": 0
+    },
+    {
+      "analysis": "transient",
+      "returncode": 0
+    }
+  ]
+}

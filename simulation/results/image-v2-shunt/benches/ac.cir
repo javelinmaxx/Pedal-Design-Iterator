@@ -1,0 +1,8 @@
+Image v2 shunt - small signal frequency response
+Vsupply supply 0 9
+Vguitar source 0 DC 0 AC 1
+Rsource source in 20k
+Rload out 0 20k
+.include pedal.cir
+.ac dec 100 10 100k
+.end

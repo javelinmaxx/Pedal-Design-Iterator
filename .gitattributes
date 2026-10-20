@@ -1,0 +1,5 @@
+# Preserve generated simulator evidence byte-for-byte and keep waveform dumps
+# out of line-by-line diffs. CSV files use the CSV writer's native CRLF endings.
+simulation/results/**/*.csv binary
+simulation/results/**/*.raw binary
+simulation/results/**/*.log binary
